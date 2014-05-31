@@ -1,6 +1,84 @@
 {% extends "base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}Edit your Profile information{% endblock %}
 
 {% block content %}
+    <div class="container">
+    	<!-- STILL MISSING MAXLENGTH -->
+
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Please edit your profile info below:</h2>
+        <input type="text" class="form-control" placeholder="First name" required autofocus>
+        <input type="text" class="form-control" placeholder="Last name">
+        <input type="text" class="form-control" placeholder="Act">
+        <textarea class="form-control" placeholder="Act Description" maxlength="50">Act Description</textarea>
+        <text
+        <button class="btn btn-lg btn-primary btn-block" style="margin-top:20px;" type="submit">Submit</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
 {% endblock %}
+
+   
+    <title></title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="signin.css" rel="stylesheet"> -->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    body {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #eee;
+    }
+
+    .form-signin {
+      max-width: 600px;
+      padding: 15px;
+      margin: 0 auto;
+    }
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox {
+      margin-bottom: 10px;
+    }
+
+    .form-signin .form-control {
+      position: relative;
+      height: auto;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .form-signin .form-control:focus {
+      z-index: 2;
+    }
+    .form-signin input[type="text"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .textarea_description {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  </style>
+
