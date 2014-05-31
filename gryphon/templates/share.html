@@ -2,8 +2,6 @@
 
 {% load staticfiles %}
 
-{% block title %}Start Collecting Donations!  Share your info today.{% endblock %}
-
 {% block pagecss %}<link rel="stylesheet" href="{% static "css/sharestyle.css" %}">{% endblock %}
 
 {% block content %}
@@ -22,8 +20,30 @@
       </div>
     </div>
     <div class="jumbotron">
-      <div class="container">
-        <h2> almost ready to go! </h2>
+      <div id="qrcodes" class="container" style="padding-top:20px;">
+        <!-- Link goes to direct QR code image URL -->
+        <a href="#"><img src="http://placehold.it/450x450" style="float:left; padding-right:20px;"></a>
+        <h2>Share the information below to start collecting donations</h2>
+
+        <h3>http://www.buskr.ca/lkdfkm</h3>
+        
+        <h2 style="padding-top:10px;">Act</h2>
+        <p>
+            Maecenas vel feugiat ligula. Integer in eros eu lacus lacinia vulputate. Pellentesque ac pulvinar eros. Nam non orci a nulla tempus volutpat. 
+            Integer in eros eu lacus lacinia. Maecenas vel feugiat ligula. Pellentesque ac pulvinar eros. Nam non orci a nulla tempus volutpat. 
+        </p>
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_preferred_3"></a>
+        <a class="addthis_button_preferred_4"></a>
+        <a class="addthis_button_compact"></a>
+        <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538a5f347dc020fc"></script>
+        <!-- AddThis Button END -->
       </div>
     </div>
 {% endblock %}
