@@ -1,13 +1,36 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block title %}Welcome{% endblock %}
+{% block pagecss %}<link rel="stylesheet" href="{% static "css/landingstyle.css" %}">{% endblock %}
 
 {% block content %}
-<div id="title-block">
-
-</div>
-<div id="button-block">
-	<button type="button" class="btn btn-default btn-lg">Sign-Up</button>
-	<button type="button" class="btn btn-default btn-lg">Login</button>
+<div id="background-wrapper">
+    <div class="jumbotron">
+    	<div class="container">
+    	<h1>Welcome</h1>
+    	<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut purus elit. Nulla porta, mauris in tristique sodales, nibh metus aliquam nibh, id venenatis libero odio nec dui. Vivamus mollis justo ac elementum mattis. Aenean mauris quam, porttitor a semper a, aliquam ac mi. Curabitur volutpat magna in risus interdum, scelerisque lobortis sapien euismod. Cras fringilla dignissim metus, id volutpat sem tincidunt in. Etiam sed justo a elit facilisis facilisis non ut nibh. Maecenas vel tempus est, vel convallis neque. Nulla id arcu lacus. Suspendisse laoreet orci metus, sed pretium urna consequat vel.
+    	</p>
+		</div>
+    </div>
+    <div class="container">
+    	<div class="row">
+			<div class="col-md-6">
+			<h2>Sign-up</h2>
+			<p>
+				Sign up to start receiving donations now!
+			</p>
+			<a class="btn btn-default" href="#" role="button">Sign-Up</a>
+			</div>
+			<div class="col-md-6">
+				<h2>Login</h2>
+				<p>
+					Login to modify your existing account.
+				</p>
+				<a class="btn btn-default" href="#" role="button">Login</a>
+			</div>
+    	</div>
+    </div>
 </div>
 {% endblock %}
