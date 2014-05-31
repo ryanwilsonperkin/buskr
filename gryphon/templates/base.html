@@ -9,16 +9,18 @@
     <title>{% block title %}{% endblock %}</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-
     <!-- page css file -->
-    <link rel="stylesheet" href="{% block pagecss %}{% endblock %}">
+    {% block pagecss %}{% endblock %}
 
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-    
   </head>
   <body>
-    <script src="static/js/jquery.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
   {% block content %}{% endblock %}
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
   </body>
 </html>
