@@ -6,8 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', landing_page),
-    url(r'^donate/(.*)$', donate),
-    url(r'^share/(.*)$', share),
-    url(r'^profile$', profile),
+    url(r'^/?$', landing_page),
+    url(r'^donate/(\d*)/?$', donate),
+    url(r'^share/(\d*)/?$', share),
+    url(r'^profile/?$', profile),
 )
