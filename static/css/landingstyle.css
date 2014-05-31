@@ -5,3 +5,10 @@
   padding-bottom: 20px;
   background-image: url("{% static 'img/landing-wallpaper.JPG' %}");
 }
+img {
+  margin-right: 10px;
+  float:left;
+}
+.row {
+  margin:10px;
+}
