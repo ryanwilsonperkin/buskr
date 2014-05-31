@@ -2,23 +2,28 @@
 
 {% load staticfiles %}
 
-{% block title %}Edit your Profile information{% endblock %}
+{% block title %}Start Collecting Donations!  Share your info today.{% endblock %}
 
 {% block pagecss %}<link rel="stylesheet" href="{% static "css/sharestyle.css" %}">{% endblock %}
 
 {% block content %}
-    <div class="container">
-    	<!-- STILL MISSING MAXLENGTH -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Buskr</a>
+        </div>
 
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please enter your profile info below:</h2>
-        <input type="text" class="form-control" placeholder="First name" required autofocus>
-        <input type="text" class="form-control" placeholder="Last name">
-        <input type="text" class="form-control" placeholder="Act">
-        <textarea class="form-control" placeholder="Act Description" maxlength="50">Act Description</textarea>
-        <text
-        <button class="btn btn-lg btn-primary btn-block" style="margin-top:20px;" type="submit">Submit</button>
-      </form>
-
-    </div> <!-- /container -->
+      </div>
+    </div>
+    <div class="jumbotron">
+      <div class="container">
+        <h2> almost ready to go! </h2>
+      </div>
+    </div>
 {% endblock %}
