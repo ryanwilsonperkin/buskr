@@ -24,6 +24,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'gryphon', 'templates'),
+)
+
 ALLOWED_HOSTS = []
 
 
