@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from gryphon.views import donate, landing_page, profile, share
+from gryphon.views import donate, landing_page, profile, share, thankyou
 admin.autodiscover()
 
 urlpatterns = patterns(
@@ -11,4 +11,5 @@ urlpatterns = patterns(
     url(r'^share/(\d*)/?$', share),
     url(r'^profile/?$', profile),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^thankyou/', thankyou),
 )

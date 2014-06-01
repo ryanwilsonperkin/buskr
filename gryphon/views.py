@@ -35,7 +35,7 @@ def donate(request, id):
             new_donation.save()
             success = make_donation(new_donation)
             if success:
-                return HttpResponseRedirect('/thanks/')
+                return render(request,'thankyou.html',{'artist': artist})
             else:
                 return HttpResponseRedirect('/damn/')
     else:
@@ -75,3 +75,6 @@ def share(request, id):
     except (ValueError, ObjectDoesNotExist):
         artist = {}
     return render(request, 'share.html', {'artist': artist})
+
+def thankyou(request):
+	return render(request,'thankyou.html')
