@@ -1,51 +1,80 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
-
-#background-wrapper{
-  padding-bottom: 0px;
-  margin-bottom:0px;
+#logo {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 100px;
 }
-.row {
-  margin:10px;
+#splash {
+  margin-top: -20px;
+  background-image: url('../img/banjo_background_filter.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 750px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.5);
 }
- #blured_image{
- 		/*width:100%;
- 		 padding:0px; */
- 	margin:0px;
- 	display: inline-block;
- 	background-size: cover;
- 	background-color: transparent;
-  	background-repeat: no-repeat;
- }
-#header{
-	text-align: center;
-	padding-top:20px;
-	margin-bottom:40px;
+#splash h1 {
+  font-size: 7em;
+  font-weight: 700;
 }
-.jumbotron{
-	background-color:#AB4E2C;
-	text-align:center;
-	border-top:1px solid #8c452a;
-	border-bottom:1px solid #8c452a;
-	margin:0px;
+#splash p {
+  font-size: 2em;
+  font-weight: 300;
 }
-.jumbotron h2{
-	color:#e8e8e8;
+.header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
-/* 
-crazy carousel thing
- */
-
-/* 
-end of crazy carousel thing
- */
-
+#call-to-action{
+  background-color:#AB4E2C;
+  border-top:1px solid #8c452a;
+  border-bottom:1px solid #8c452a;
+  padding-top: 75px;
+  padding-bottom: 40px;
+  min-height: 300px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(1, 1, 1, 0.5);
+}
+#call-to-action h2 {
+  font-weight: 100;
+}
+.blank .row {
+  padding: 50px;
+  text-align: center;
+}
+.blank h1 {
+  font-weight: 100;
+  font-size: 4em;
+}
+.blank p {
+  margin: 10px;
+}
+.blank img {
+  margin: 0 auto;
+}
+#last-chance {
+  background-color: #428bca;
+}
+#last-chance h1 {
+  font-weight: 100;
+  color: white;
+}
+#last-chance .row {
+  padding: 50px;
+  text-align: center;
+}
 
  /* 
  =====================
  blurr */
 
-		.blured {
+    .blured {
               -webkit-filter: blur(2px);            
         }
         .unblured {
