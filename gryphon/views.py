@@ -75,3 +75,6 @@ def share(request, id):
     except (ValueError, ObjectDoesNotExist):
         artist = {}
     return render(request, 'share.html', {'artist': artist})
+
+def thankyou(request):
+	return render(request,'thankyou.html')
