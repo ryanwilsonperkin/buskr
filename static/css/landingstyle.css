@@ -1,7 +1,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 #background-wrapper{
-  padding-top: 50px;
   padding-bottom: 20px;
   background-image: url("{% static 'img/landing-wallpaper.JPG' %}");
 }
