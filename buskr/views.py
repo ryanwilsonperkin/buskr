@@ -74,7 +74,7 @@ def share(request, id):
         id = int(id)
         artist = Artist.objects.get(pk=id)
     except (ValueError, ObjectDoesNotExist):
-        artist = {}
+        raise Http404()
     return render(request, 'share.html', {'artist': artist})
 
 def thankyou(request):

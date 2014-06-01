@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block pagecss %}<link rel="stylesheet" href="{% static "css/404.css" %}">{% endblock %}
+
+{% block title %}404{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <img src="{% static "img/axe.svg" %}">
+    <h1>404 AXE NOT FOUND</h1>
+  </div>
+</div>
+{% endblock %}
