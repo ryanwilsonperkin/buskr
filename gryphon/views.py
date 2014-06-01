@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 from artist.forms import CreateArtistForm
 from artist.models import Artist
+from donor.forms import CreditCardDonation
+from donor.models import CreditCard, Donation
 
 def donate(request, id):
     try:
