@@ -60,7 +60,7 @@ def profile(request):
                 thank_you_message=form.cleaned_data['thank_you_message']
             )
             new_artist.save()
-            return HttpResponseRedirect('/share/{id}'.format(new_artist.id))
+            return HttpResponseRedirect('/share/{id}'.format(id=new_artist.id))
     else:
         form = CreateArtistForm()
 
