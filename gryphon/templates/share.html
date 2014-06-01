@@ -7,59 +7,43 @@
 {% block title %}Start collecting your donations{% endblock %}
 
 {% block content %}
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Buskr</a>
-        </div>
-
-      </div>
-    </div>
-    <div class="jumbotron">
-      <div id="qrcodes" class="container" style="padding-top:20px;">
-        <!-- Link goes to direct QR code image URL -->
-        <a href="#"><div id="qrcode" style="float:left; padding-right:20px;"></div></a>
-        <h2>Share the information below to start collecting donations</h2>
-
-        <h3 id="qrtext">http://www.buskr.ca/donate/lkdfkm</h3>
-        
-        <h2 style="padding-top:10px;">Act</h2>
-        <p>
-            Maecenas vel feugiat ligula. Integer in eros eu lacus lacinia vulputate. Pellentesque ac pulvinar eros. Nam non orci a nulla tempus volutpat. 
-            Integer in eros eu lacus lacinia. Maecenas vel feugiat ligula. Pellentesque ac pulvinar eros. Nam non orci a nulla tempus volutpat. 
-        </p>
-        <!-- AddThis Button BEGIN -->
-        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-        <a class="addthis_button_preferred_1"></a>
-        <a class="addthis_button_preferred_2"></a>
-        <a class="addthis_button_preferred_3"></a>
-        <a class="addthis_button_preferred_4"></a>
-        <a class="addthis_button_compact"></a>
-        <a class="addthis_counter addthis_bubble_style"></a>
-        </div>
-        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538a5f347dc020fc"></script>
-        <!-- AddThis Button END -->
-        <!-- Do QR making -->
-        <script type="text/javascript" src="{% static "js/qrcode.js" %}"></script>
-        <script>
-            var qrcode = new QRCode(document.getElementById("qrcode"), {
-                text: document.getElementById("qrtext").innerHTML,
-                width: 450,
-                height: 450,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            });
-        </script>
-        <!-- Stop doing QR meeting-->
-
-      </div>
-    </div>
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style hidden-print">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<section id="share-page">
+  <div id="qrcodes" class="container">
+    <!-- Link goes to direct QR code image URL -->
+    <a href="#"><div id="qrcode"></div></a>
+    <h3 id="qrtext" class="hidden-print"><a href="//buskr.ca/donate/{{ artist.id }}">http://buskr.ca/donate/{{ artist.id }}</a></h3>
+    <h3 class="visible-print">http://buskr.ca/donate/{{ artist.id }}</h3>
+  </div>
+</section>
+<section id="additional-content">
+  <h1 class="hidden-print">Share or Print this page to receive donations.</h1>
+  <h2>{{ artist.first_name }} {{ artist.last_name }}</h2>
+  <p class="lead">{{ artist.description }}</p>
+  <hr />
+  <p class="lead">{{ artist.thank_you_message }}</p>
+</section>
+<div id="logo">
+<img src="{% static "img/logo_circle.png" %}" class="img-responive">
+</div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538a5f347dc020fc"></script>
+  <script type="text/javascript" src="{% static "js/qrcode.js" %}"></script>
+  <script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: document.getElementById("qrtext").innerText,
+      width: 300,
+      height: 300,
+      colorDark : "#AB4E2C",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+  </script>
 {% endblock %}
