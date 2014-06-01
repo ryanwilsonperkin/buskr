@@ -1,21 +1,66 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 #background-wrapper{
-  padding-bottom: 20px;
+  padding-bottom: 0px;
+  margin-bottom:0px;
 }
 .row {
   margin:10px;
 }
+ #blured_image{
+ 		/*width:100%;
+ 		 padding:0px; */
+ 	margin:0px;
+ 	display: inline-block;
+ 	background-size: cover;
+ 	background-color: transparent;
+  	background-repeat: no-repeat;
+ }
 #header{
 	text-align: center;
 	padding-top:20px;
+	margin-bottom:40px;
 }
 .jumbotron{
 	background-color:#AB4E2C;
 	text-align:center;
 	border-top:1px solid #8c452a;
 	border-bottom:1px solid #8c452a;
+	margin:0px;
 }
 .jumbotron h2{
 	color:#e8e8e8;
 }
+
+/* 
+crazy carousel thing
+ */
+
+/* 
+end of crazy carousel thing
+ */
+
+
+ /* 
+ =====================
+ blurr */
+
+		.blured {
+              -webkit-filter: blur(2px);            
+        }
+        .unblured {
+          -webkit-animation-duration: 2s;
+          -webkit-animation-name: slidein;
+        }
+        @-webkit-keyframes slidein {
+          from {
+              -webkit-filter: blur(10px);
+          }
+          
+          to {
+              -webkit-filter: blur(0px);
+          }
+        }
+ /* 
+ =====================
+ end of blurr */

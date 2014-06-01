@@ -14,11 +14,26 @@
 	    	<h1>Bring your own</h1>
 	    	<h1><span id="bringyourown">(Audience)</span></h1>
 	    	<h2>Start Collecting Today</h2>
-	    	<img src="{% static "img/register.jpg" %}" style="padding-top:10px;">
+	    	<a href="profile.html"><img src="{% static "img/register.jpg" %}" style="padding-top:10px;"></a>
 		</div>
     </div>
 </div>
+<div id="blured_image">
+	 <img src="{% static "img/imagetoblur.jpg" %}">
+	    hi <br />
+	    hi 
+
+	 <input name="" type="button" value="Change" onclick="ani()" />
+</div>
+<!-- wtf carousel here -->
+
+
+<!-- End of carousel -->
 <script>
+	function ani(){
+            document.getElementById("blured_image").className = 'unblured'
+    }
+
 	var texts = ["(Guitar)", "(Mic)", "(One man marching band)", "(Robot Outfit)", "(Instrument)", "(Talent)"];
 	var count = 0;
 	function changeText() {
