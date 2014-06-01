@@ -35,9 +35,10 @@ def donate(request, id):
             new_donation.save()
             success = make_donation(new_donation)
             if success:
-                return render(request,'thankyou.html',{'artist': artist})
+                return HttpResponseRedirect('/thankyou/')
             else:
-                return HttpResponseRedirect('/damn/')
+                # Temporary workaround while PayPal api sends 500 errors
+                return HttpResponseRedirect('/')
     else:
         form = CreditCardDonationForm()
     return render(request, 'donate.html', {
@@ -77,4 +78,4 @@ def share(request, id):
     return render(request, 'share.html', {'artist': artist})
 
 def thankyou(request):
-	return render(request,'thankyou.html')
+    return render(request, 'thankyou.html')
