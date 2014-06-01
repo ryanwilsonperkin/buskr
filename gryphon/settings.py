@@ -34,22 +34,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    #'django.contrib.admin',
-    #'django.contrib.auth',
-    #'django.contrib.contenttypes',
-    #'django.contrib.sessions',
-    #'django.contrib.messages',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
     'artist',
 )
 
 MIDDLEWARE_CLASSES = (
-    #'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'gryphon.urls'
@@ -91,9 +91,13 @@ STATICFILES_DIRS = (
 
 DEFAULT_PAYPAL_CLIENT_ID = 'EOJ2S-Z6OoN_le_KS1d75wsZ6y0SFdVsY9183IvxFyZp'
 DEFAULT_PAYPAL_SECRET = 'EClusMEUk8e9ihI7ZdVLF5cZ6y0SFdVsY9183IvxFyZp'
+DEFAULT_PAYPAL_MODE = 'sandbox'
 PAYPAL_CLIENT_ID = os.environ.get(
     'PAYPAL_CLIENT_ID',
     DEFAULT_PAYPAL_CLIENT_ID)
 PAYPAL_SECRET = os.environ.get(
     'PAYPAL_SECRET',
     DEFAULT_PAYPAL_SECRET)
+PAYPAL_MODE = os.environ.get(
+    'PAYPAL_MODE',
+    DEFAULT_PAYPAL_MODE)
