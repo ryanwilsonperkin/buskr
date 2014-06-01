@@ -3,12 +3,20 @@
 #background-wrapper{
   padding-top: 50px;
   padding-bottom: 20px;
-  background-image: url("{% static 'img/landing-wallpaper.JPG' %}");
-}
-img {
-  margin-right: 10px;
-  float:left;
 }
 .row {
   margin:10px;
+}
+#header{
+	text-align: center;
+	padding-top:20px;
+}
+.jumbotron{
+	background-color:#AB4E2C;
+	text-align:center;
+	border-top:1px solid #8c452a;
+	border-bottom:1px solid #8c452a;
+}
+.jumbotron h2{
+	color:#e8e8e8;
 }
