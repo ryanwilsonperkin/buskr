@@ -1,5 +1,5 @@
 """
-Django settings for gryphon project.
+Django settings for buskr project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'gryphon', 'templates'),
+    os.path.join(BASE_DIR, 'buskr', 'templates'),
 )
 
 ALLOWED_HOSTS = []
@@ -53,9 +53,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'gryphon.urls'
+ROOT_URLCONF = 'buskr.urls'
 
-WSGI_APPLICATION = 'gryphon.wsgi.application'
+WSGI_APPLICATION = 'buskr.wsgi.application'
 
 
 # Database

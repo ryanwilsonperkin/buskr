@@ -1,7 +1,7 @@
 import paypalrestsdk
 import logging
 
-from gryphon.settings import PAYPAL_MODE, PAYPAL_SECRET, PAYPAL_CLIENT_ID
+from buskr.settings import PAYPAL_MODE, PAYPAL_SECRET, PAYPAL_CLIENT_ID
 
 logging.basicConfig(level=logging.DEBUG)
 

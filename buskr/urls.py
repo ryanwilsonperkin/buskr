@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from gryphon.views import donate, landing_page, profile, share, thankyou
+from buskr.views import donate, landing_page, profile, share, thankyou
 admin.autodiscover()
 
 urlpatterns = patterns(
