@@ -85,7 +85,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+DEFAULT_PAYPAL_CLIENT_ID = 'EOJ2S-Z6OoN_le_KS1d75wsZ6y0SFdVsY9183IvxFyZp'
+DEFAULT_PAYPAL_SECRET = 'EClusMEUk8e9ihI7ZdVLF5cZ6y0SFdVsY9183IvxFyZp'
+PAYPAL_CLIENT_ID = os.environ.get(
+    'PAYPAL_CLIENT_ID',
+    DEFAULT_PAYPAL_CLIENT_ID)
+PAYPAL_SECRET = os.environ.get(
+    'PAYPAL_SECRET',
+    DEFAULT_PAYPAL_SECRET)
