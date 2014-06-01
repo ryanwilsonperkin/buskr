@@ -35,7 +35,7 @@ def donate(request, id):
             new_donation.save()
             success = make_donation(new_donation)
             if success:
-                return HttpResponseRedirect('/thanks/')
+                return render(request,'thankyou.html',{'artist': artist})
             else:
                 return HttpResponseRedirect('/damn/')
     else:
