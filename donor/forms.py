@@ -1,8 +1,9 @@
 from django import forms
 
-class CreditCardDonation(forms.Form):
-    cardholder_name = models.CharField(max_length=100)
-    expire_month = models.IntegerField()
-    expire_year = models.IntegerField()
-    cvv2 = models.IntegerField()
-    amount = models.DecimalField(max_digits=5, decimal_places=2)
+class CreditCardDonationForm(forms.Form):
+    cardholder_name = forms.CharField(max_length=100)
+    number = forms.BigIntegerField()
+    expire_month = forms.IntegerField()
+    expire_year = forms.IntegerField()
+    cvv2 = forms.IntegerField()
+    amount = forms.DecimalField(max_digits=5, decimal_places=2)
