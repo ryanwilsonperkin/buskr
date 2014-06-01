@@ -3,7 +3,7 @@ import logging
 
 from gryphon.settings import PAYPAL_MODE, PAYPAL_SECRET, PAYPAL_CLIENT_ID
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 def get_credit_card_type(number):
     number = str(number)
@@ -38,11 +38,11 @@ def configure_paypal():
         'client_secret': PAYPAL_SECRET
     })
 
-def make_credit_card_payment(cardholder_name, number, expire_month,
-                             expire_year, cvv2, amount):
+def make_donation(donation):
     """Returns the result of attempting a payment through the PayPal api."""
-    first_name, last_name = split_card_holder_name(cardholder_name)
-    credit_card_type = get_credit_card_type(number)
+    card = donation.card
+    first_name, last_name = split_card_holder_name(card.cardholder_name)
+    credit_card_type = get_credit_card_type(card.number)
     if not credit_card_type:
         return False
 
@@ -54,10 +54,10 @@ def make_credit_card_payment(cardholder_name, number, expire_month,
             'funding_instruments': [{
                 'credit_card': {
                     'type': credit_card_type,
-                    'number': str(number),
-                    'expire_month': str(expire_month),
-                    'expire_year': str(expire_year),
-                    'cvv2': str(cvv2),
+                    'number': str(card.number),
+                    'expire_month': str(card.expire_month),
+                    'expire_year': str(card.expire_year),
+                    'cvv2': str(card.cvv2),
                     'first_name': first_name,
                     'last_name': last_name,
                 }
@@ -65,10 +65,10 @@ def make_credit_card_payment(cardholder_name, number, expire_month,
         },
         'transactions': [{
             'amount': {
-                'total': str(amount),
-                'currency': 'CAD',
+                'total': str(donation.amount),
+                'currency': str(donation.currency),
             },
-            'description': 'Donation through Buskr.ca'
+            'description': str(donation.description)
         }]
     })
     return payment.create()

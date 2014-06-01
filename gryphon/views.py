@@ -6,31 +6,34 @@ from artist.forms import CreateArtistForm
 from artist.models import Artist
 from donor.forms import CreditCardDonationForm
 from donor.models import CreditCard, Donation
-from donor.utils import make_credit_card_payment
+from donor.utils import make_donation
 
 def donate(request, id):
     try:
         id = int(id)
         artist = Artist.objects.get(pk=id)
     except (ValueError, ObjectDoesNotExist):
-        artist = {} 
+        artist = Artist.objects.get(first_name='Ryan')
     if request.method == 'POST':
         form = CreditCardDonationForm(request.POST)
         if form.is_valid():
-            cardholder_name = form.cleaned_data['cardholder_name']
-            number = form.cleaned_data['number']
-            expire_month = form.cleaned_data['expire_month']
-            expire_year = form.cleaned_data['expire_year']
-            cvv2 = form.cleaned_data['cvv2']
-            amount = form.cleaned_data['amount']
-            success = make_credit_card_payment(
-                cardholder_name,
-                number,
-                expire_month,
-                expire_year,
-                cvv2,
-                amount
+            new_card = CreditCard(
+                cardholder_name=form.cleaned_data['cardholder_name'],
+                number=form.cleaned_data['number'],
+                expire_month=form.cleaned_data['expire_month'],
+                expire_year=form.cleaned_data['expire_year'],
+                cvv2=form.cleaned_data['cvv2']
             )
+            new_card.save()
+            new_donation = Donation(
+                card=new_card,
+                amount=form.cleaned_data['amount'],
+                currency='CAD',
+                description='Donation through buskr.ca.',
+                recipient=artist
+            )
+            new_donation.save()
+            success = make_donation(new_donation)
             if success:
                 return HttpResponseRedirect('/thanks/')
             else:
@@ -49,11 +52,14 @@ def profile(request):
     if request.method == 'POST':
         form = CreateArtistForm(request.POST)
         if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            profession = form.cleaned_data['profession']
-            description = form.cleaned_data['description']
-            thank_you_message = form.cleaned_data['thank_you_message']
+            new_artist = Artist(
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                profession=form.cleaned_data['profession'],
+                description=form.cleaned_data['description'],
+                thank_you_message=form.cleaned_data['thank_you_message']
+            )
+            new_artist.save()
             return HttpResponseRedirect('/thanks/')
     else:
         form = CreateArtistForm()
