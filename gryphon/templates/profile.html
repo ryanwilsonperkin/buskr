@@ -8,14 +8,12 @@
 
 {% block content %}
     <div class="container">
-    	<!-- STILL MISSING MAXLENGTH -->
-
       <form class="form-signin" role="form" method="post">{% csrf_token %}
-        <h2 class="form-signin-heading">Please enter your profile info below:</h2>
+        <h2 class="form-signin-heading">Just a few questions to get you started...</h2>
 
         <!-- FIRST NAME -->
         <div class="form-group {% if form.first_name.errors %}has-error{% endif %}">
-          <label for="{{ form.first_name.id_for_label }}">First name</label>
+          <label for="{{ form.first_name.id_for_label }}">What's your first name?</label>
           <input type="text"
                  class="form-control"
                  id="{{ form.first_name.id_for_label }}"
@@ -26,7 +24,7 @@
 
         <!-- LAST NAME -->
         <div class="form-group {% if form.last_name.errors %}has-error{% endif %}">
-          <label for="{{ form.last_name.id_for_label }}">Last name</label>
+          <label for="{{ form.last_name.id_for_label }}">How about your last name?</label>
           <input type="text"
                  class="form-control"
                  id="{{ form.last_name.id_for_label }}"
@@ -37,7 +35,7 @@
 
         <!-- PROFESSION -->
         <div class="form-group {% if form.profession.errors %}has-error{% endif %}">
-          <label for="{{ form.profession.id_for_label }}">Profession</label>
+          <label for="{{ form.profession.id_for_label }}">What do you perform?</label>
           <input type="text"
                  class="form-control"
                  id="{{ form.profession.id_for_label }}"
@@ -48,22 +46,22 @@
         
         <!-- DESCRIPTION -->
         <div class="form-group {% if form.description.errors %}has-error{% endif %}">
-          <label for="{{ form.description.id_for_label }}">Description</label>
+          <label for="{{ form.description.id_for_label }}">How would you describe your performace?</label>
           <textarea class="form-control"
                     id="{{ form.description.id_for_label }}"
                     name="{{ form.description.html_name }}"
                     max_length="{{ form.description.field.max_length }}"
-                    placeholder="Description"></textarea>
+                    placeholder="Description (140 characters max)"></textarea>
         </div>
 
         <!-- THANK YOU MESSAGE -->
         <div class="form-group {% if form.thank_you_message.errors %}has-error{% endif %}">
-          <label for="{{ form.thank_you_message.id_for_label }}">Thank you message</label>
+          <label for="{{ form.thank_you_message.id_for_label }}">What would you like to say to your donors?</label>
           <textarea class="form-control"
                     id="{{ form.thank_you_message.id_for_label }}"
                     name="{{ form.thank_you_message.html_name }}"
                     max_length="{{ form.thank_you_message.field.max_length }}"
-                    placeholder="Thank you message"></textarea>
+                    placeholder="Thank you message (140 characters max)"></textarea>
         </div>
 
           <button class="btn btn-lg btn-primary btn-block" style="margin-top:20px;" type="submit">Submit</button>
