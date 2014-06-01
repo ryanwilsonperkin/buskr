@@ -1,17 +1,22 @@
-#qrcodes img {
-  margin: 50px auto 0;
-}
-section {
+#thanks {
+  margin: 200px auto;
   text-align: center;
 }
-.addthis_toolbox {
-  margin: 0 auto;
-  text-align: center;
+#thanks h1 {
+  font-size: 8em;
 }
-hr {
-  width: 50%;
+.battlehack {
+  max-width: 500px;
 }
-#logo {
+.girl {
+  left: 0px;
+  top: 0px;
   position: absolute;
-  bottom: 10px;
+  z-index: -1;
+}
+.guy {
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  z-index: -1;
 }

@@ -7,8 +7,18 @@
 {% block title %}Thank You For Your Donataion!{% endblock %}
 
 {% block content %}
-<div id="thanks">
-  <h1> Thank You </h1>
-  <p class="lead">{{ artist.thank_you_message }}</p>
+<div class="container">
+  <img class="battlehack girl" src="{% static "img/battlehack-girl.png" %}">
+  <img class="battlehack guy" src="{% static "img/battlehack-guy.png" %}">
+  <div class="row">
+    <div id="thanks">
+      <h1>THANK YOU</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div id="logo">
+      <a href="/"><img src="{% static "img/logo_circle.png" %}" class="img-responive"></a>
+    </div>
+  </div>
 </div>
 {% endblock %}
