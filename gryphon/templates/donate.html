@@ -9,20 +9,14 @@
 {% block content %}
 <div class="container">
     <div class="jumbotron">
-        <h1>Buskr</h1>
-        <p class="lead">Thanks for your interest in donating,</p>
-        <p class="lead">Buskr helps artists like first name keep the show going. </p>
+        <a href="/"><img id="logo" src="{% static "img/logo_circle.png" %}" class="img-responive"></a>
+        <p class="lead">Buskr helps artists like <strong>{{ artist.first_name }}</strong> keep the show going.</p>
     </div>
 
    <div class="row marketing">
-        
-        <div id="about" class="col-lg-9">
-        	<h2 style="padding-top:10px;">Act</h2>
-	        <p>
-	            Maecenas vel feugiat ligula. Integer in eros eu lacus lacinia vulputate. Pellentesque ac pulvinar eros. Nam non orci a nulla tempus volutpat. 
-	            Integer in eros eu lacus lacinia. Maecenas vel feugiat ligula. Pellentesque ac pulvinar eros. Nam non orci a nulla tempus volutpat. 
-	        </p>
-	        <p class="lead" style="padding-top:20px;">Just enter an amount below and enjoy your show :)</p>
+        <div id="about">
+          <h2>{{ artist.first_name }} {{ artist.last_name }}</h2>
+          <p class="lead">{{ artist.description }}<p>
         </div>
         <form class="form-horizontal" role="form" id="credit_form" method="post">{% csrf_token %}
 
@@ -111,7 +105,7 @@
           <!-- CVV -->
           <div class="form-group {% if form.cvv2.errors %}has-error{% endif %}">
             <label class="col-sm-3 control-label" for="{{ form.cvv2.id_for_label }}">CVV</label>
-		        <div class="col-sm-3">
+		        <div class="col-sm-3 col-xs-6">
               <input type="text"
                      class="form-control"
                      name="{{ form.cvv2.html_name }}"
@@ -125,9 +119,6 @@
 		        </div>
 		      </div>
         </form>
-      </div>
-      <div class="footer">
-      	<p>&copy; Company 2014</p>
       </div>
  </div>
 {% endblock %}
