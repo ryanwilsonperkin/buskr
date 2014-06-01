@@ -13,7 +13,7 @@ def donate(request, id):
         id = int(id)
         artist = Artist.objects.get(pk=id)
     except (ValueError, ObjectDoesNotExist):
-        artist = Artist.objects.get(first_name='Ryan')
+        raise Http404()
     if request.method == 'POST':
         form = CreditCardDonationForm(request.POST)
         if form.is_valid():

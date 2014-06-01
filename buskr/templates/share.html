@@ -27,12 +27,13 @@
   <h1 class="hidden-print">Share or Print this page to receive donations.</h1>
   <h2>{{ artist.first_name }} {{ artist.last_name }}</h2>
   <p class="lead">{{ artist.description }}</p>
-  <hr />
   <p class="lead">{{ artist.thank_you_message }}</p>
 </section>
+<section>
 <div id="logo">
-<img src="{% static "img/logo_circle.png" %}" class="img-responive">
+<img src="{% static "img/logo_circle.png" %}" class="img-responsive visible-desktop">
 </div>
+</section>
   <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538a5f347dc020fc"></script>
   <script type="text/javascript" src="{% static "js/qrcode.js" %}"></script>

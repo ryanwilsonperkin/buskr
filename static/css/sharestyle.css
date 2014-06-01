@@ -1,5 +1,5 @@
 #qrcodes img {
-  margin: 50px auto 0;
+  margin: 40px auto 0;
 }
 section {
   text-align: center;
@@ -10,8 +10,4 @@ section {
 }
 hr {
   width: 50%;
-}
-#logo {
-  position: absolute;
-  bottom: 10px;
 }
