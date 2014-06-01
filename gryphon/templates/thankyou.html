@@ -8,17 +8,12 @@
 
 {% block content %}
 <div class="container">
-  <img class="battlehack girl" src="{% static "img/battlehack-girl.png" %}">
-  <img class="battlehack guy" src="{% static "img/battlehack-guy.png" %}">
   <div class="row">
     <div id="thanks">
       <h1>THANK YOU</h1>
     </div>
   </div>
-  <div class="row">
-    <div id="logo">
-      <a href="/"><img src="{% static "img/logo_circle.png" %}" class="img-responive"></a>
-    </div>
-  </div>
+  <a href="/"><img id="buskr_logo" src="{% static "img/logo_circle.png" %}" class="img-responive"></a>
+  <a href="https://developer.paypal.com/"><img id="paypal_logo" src="{% static "img/paypal.png" %}" class="img-responsive"></a>
 </div>
 {% endblock %}

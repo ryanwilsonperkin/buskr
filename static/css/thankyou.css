@@ -1,3 +1,9 @@
+body {
+  background-image: url('../img/battlehack-guy.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 #thanks {
   margin: 200px auto;
   text-align: center;
@@ -8,15 +14,15 @@
 .battlehack {
   max-width: 500px;
 }
-.girl {
-  left: 0px;
-  top: 0px;
+#paypal_logo {
   position: absolute;
-  z-index: -1;
+  bottom: 30px;
+  left: 30px;
+  max-width: 30%;
 }
-.guy {
-  right: 0px;
-  top: 0px;
+#buskr_logo {
   position: absolute;
-  z-index: -1;
+  bottom: 30px;
+  right: 30px;
+  max-width: 30%;
 }
