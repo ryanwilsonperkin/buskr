@@ -24,10 +24,10 @@
     <div class="jumbotron">
       <div id="qrcodes" class="container" style="padding-top:20px;">
         <!-- Link goes to direct QR code image URL -->
-        <a href="#"><img src="http://placehold.it/450x450" style="float:left; padding-right:20px;"></a>
+        <a href="#"><div id="qrcode" style="float:left; padding-right:20px;"></div></a>
         <h2>Share the information below to start collecting donations</h2>
 
-        <h3>http://www.buskr.ca/lkdfkm</h3>
+        <h3 id="qrtext">http://www.buskr.ca/donate/lkdfkm</h3>
         
         <h2 style="padding-top:10px;">Act</h2>
         <p>
@@ -46,6 +46,20 @@
         <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538a5f347dc020fc"></script>
         <!-- AddThis Button END -->
+        <!-- Do QR making -->
+        <script type="text/javascript" src="{% static "js/qrcode.js" %}"></script>
+        <script>
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: document.getElementById("qrtext").innerHTML,
+                width: 450,
+                height: 450,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        </script>
+        <!-- Stop doing QR meeting-->
+
       </div>
     </div>
 {% endblock %}
