@@ -10,4 +10,5 @@ urlpatterns = patterns(
     url(r'^donate/(\d*)/?$', donate),
     url(r'^share/(\d*)/?$', share),
     url(r'^profile/?$', profile),
+    url(r'^admin/', include(admin.site.urls)),
 )
