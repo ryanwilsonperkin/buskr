@@ -54,7 +54,7 @@ def profile(request):
             profession = form.cleaned_data['profession']
             description = form.cleaned_data['description']
             thank_you_message = form.cleaned_data['thank_you_message']
-            return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('/share/')
     else:
         form = CreateArtistForm()
 
