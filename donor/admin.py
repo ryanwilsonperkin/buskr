@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from donor.models import CreditCard, Donation
+
+admin.site.register(CreditCard)
+admin.site.register(Donation)
