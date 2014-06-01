@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from artist.forms import CreateArtistForm
 from artist.models import Artist
-from donor.forms import CreditCardDonation
+from donor.forms import CreditCardDonationForm
 from donor.models import CreditCard, Donation
 
 def donate(request, id):
@@ -13,7 +13,21 @@ def donate(request, id):
         artist = Artist.objects.get(pk=id)
     except (ValueError, ObjectDoesNotExist):
         artist = {} 
-    return render(request, 'donate.html', {'artist': artist})
+    if request.method == 'POST':
+        form = CreditCardDonationForm(request.POST)
+        if form.is_valid():
+            cardholder_name = form.cleaned_data['cardholder_name']
+            expire_month = form.cleaned_data['expire_month']
+            expire_year = form.cleaned_data['expire_year']
+            cvv2 = form.cleaned_data['cvv2']
+            amount = form.cleaned_data['amount']
+            return HttpResponseRedirect('/thanks/')
+    else:
+        form = CreditCardDonationForm()
+    return render(request, 'donate.html', {
+        'artist': artist,
+        'form': form,
+    })
 
 def landing_page(request):
     return render(request, 'landing_page.html')

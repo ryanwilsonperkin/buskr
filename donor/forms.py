@@ -2,7 +2,7 @@ from django import forms
 
 class CreditCardDonationForm(forms.Form):
     cardholder_name = forms.CharField(max_length=100)
-    number = forms.BigIntegerField()
+    number = forms.IntegerField()
     expire_month = forms.IntegerField()
     expire_year = forms.IntegerField()
     cvv2 = forms.IntegerField()

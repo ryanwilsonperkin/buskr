@@ -24,75 +24,107 @@
 	        </p>
 	        <p class="lead" style="padding-top:20px;">Just enter an amount below and enjoy your show :)</p>
         </div>
-        <form class="form-horizontal" role="form" id="credit_form">
-        	<div class="form-group">
-		        <label class="col-sm-3 control-label" for="amount">Amount</label>
+        <form class="form-horizontal" role="form" id="credit_form" method="post">{% csrf_token %}
+
+          <!-- AMOUNT -->
+          <div class="form-group {% if form.amount.errors %}has-error{% endif %}">
+            <label class="col-sm-3 control-label" for="{{ form.amount.id_for_label }}">Amount</label>
 		        <div class="col-sm-9">
-		          <input type="text" class="form-control" name="amound" id="amount" value="$5">
+		          <input type="text"
+                     class="form-control"
+                     name="{{ form.amount.html_name }}"
+                     id="{{ form.amount.id_for_label }}"
+                     value="5">
 		        </div>
 		      </div>	
-		      <div class="form-group">
-		        <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
+
+          <!-- CARDHOLDER -->
+          <div class="form-group {% if form.cardholder_name.errors %}has-error{% endif %}">
+            <label class="col-sm-3 control-label" for="{{ form.cardholder_name.id_for_label }}">Name on Card</label>
 		        <div class="col-sm-9">
-		          <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
+		          <input type="text"
+                     class="form-control"
+                     name="{{ form.cardholder_name.html_name }}"
+                     id="{{ form.cardholder_name.id_for_label }}"
+                     placeholder="Card Holder's Name">
 		        </div>
 		      </div>
-		      <div class="form-group">
-		        <label class="col-sm-3 control-label" for="card-number">Card Number</label>
+
+          <!-- NUMBER -->
+          <div class="form-group {% if form.number.errors %}has-error{% endif %}">
+            <label class="col-sm-3 control-label" for="{{ form.number.id_for_label }}">Card Number</label>
 		        <div class="col-sm-9">
-		          <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+		          <input type="text"
+                     class="form-control"
+                     name="{{ form.number.html_name }}"
+                     id="{{ form.number.id_for_label }}"
+                     placeholder="Credit Card Number">
 		        </div>
 		      </div>
-		      <div class="form-group">
-		        <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+
+          <!-- EXPIRY MONTH -->
+          <div class="form-group {% if form.expire_month.errors or form.expire_year.errors %}has-error{% endif %}">
+		        <label class="col-sm-3 control-label" for="{{ form.expire_month.id_for_label }}">Expiration Date</label>
 		        <div class="col-sm-9">
 		          <div class="row">
 		            <div class="col-xs-3">
-		              <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
+                  <select class="form-control col-sm-2"
+                          name="{{ form.expire_month.html_name }}"
+                          id="{{ form.expire_month.id_for_label }}">
 		                <option>Month</option>
-		                <option value="01">Jan (01)</option>
-		                <option value="02">Feb (02)</option>
-		                <option value="03">Mar (03)</option>
-		                <option value="04">Apr (04)</option>
-		                <option value="05">May (05)</option>
-		                <option value="06">June (06)</option>
-		                <option value="07">July (07)</option>
-		                <option value="08">Aug (08)</option>
-		                <option value="09">Sep (09)</option>
+		                <option value="1">Jan (01)</option>
+		                <option value="2">Feb (02)</option>
+		                <option value="3">Mar (03)</option>
+		                <option value="4">Apr (04)</option>
+		                <option value="5">May (05)</option>
+		                <option value="6">June (06)</option>
+		                <option value="7">July (07)</option>
+		                <option value="8">Aug (08)</option>
+		                <option value="9">Sep (09)</option>
 		                <option value="10">Oct (10)</option>
 		                <option value="11">Nov (11)</option>
 		                <option value="12">Dec (12)</option>
 		              </select>
 		            </div>
 		            <div class="col-xs-3">
-		              <select class="form-control" name="expiry-year">
-		                <option value="14">2014</option>
-		                <option value="15">2015</option>
-		                <option value="16">2016</option>
-		                <option value="17">2017</option>
-		                <option value="18">2018</option>
-		                <option value="19">2019</option>
-		                <option value="20">2020</option>
-		                <option value="21">2021</option>
-		                <option value="22">2022</option>
-		                <option value="23">2023</option>
+
+                  <!-- EXPIRY YEAR -->
+		              <select class="form-control"
+                          name="{{ form.expire_year.html_name }}"
+                          id="{{ form.expire_year.id_for_label}}">
+		                <option value="2014">2014</option>
+		                <option value="2015">2015</option>
+		                <option value="2016">2016</option>
+		                <option value="2017">2017</option>
+		                <option value="2018">2018</option>
+		                <option value="2019">2019</option>
+		                <option value="2020">2020</option>
+		                <option value="2021">2021</option>
+		                <option value="2022">2022</option>
+		                <option value="2023">2023</option>
 		              </select>
 		            </div>
 		          </div>
 		        </div>
 		      </div>
-		      <div class="form-group">
-		        <label class="col-sm-3 control-label" for="cvv">Card CVV</label>
+
+          <!-- CVV -->
+          <div class="form-group {% if form.cvv2.errors %}has-error{% endif %}">
+            <label class="col-sm-3 control-label" for="{{ form.cvv2.id_for_label }}">CVV</label>
 		        <div class="col-sm-3">
-		          <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+              <input type="text"
+                     class="form-control"
+                     name="{{ form.cvv2.html_name }}"
+                     id="{{ form.cvv2.id_for_label }}"
+                     placeholder="Security Code">
 		        </div>
 		      </div>
 		      <div class="form-group">
 		        <div class="col-sm-offset-3 col-sm-9">
-		          <button type="button" class="btn btn-warning">Pay Now</button>
+		          <button class="btn btn-warning" type="submit">Pay Now</button>
 		        </div>
 		      </div>
-		  </form>
+        </form>
       </div>
       <div class="footer">
       	<p>&copy; Company 2014</p>
