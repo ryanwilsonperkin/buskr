@@ -10,7 +10,7 @@ def donate(request, id):
         id = int(id)
         artist = Artist.objects.get(pk=id)
     except (ValueError, ObjectDoesNotExist):
-        raise Http404("Artist \"{}\" not found.".format(id))
+        artist = {} 
     return render(request, 'donate.html', {'artist': artist})
 
 def landing_page(request):
@@ -38,5 +38,5 @@ def share(request, id):
         id = int(id)
         artist = Artist.objects.get(pk=id)
     except (ValueError, ObjectDoesNotExist):
-        raise Http404("Artist \"{}\" not found.".format(id))
+        artist = {}
     return render(request, 'share.html', {'artist': artist})
